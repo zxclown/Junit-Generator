@@ -1,0 +1,2 @@
+# Junit-Generator
+intellij plugin 
