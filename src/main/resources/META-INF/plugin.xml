@@ -1,0 +1,64 @@
+<idea-plugin url="">
+    <name>JUnitGenerator</name>
+    <id>org.intellij.plugins.junitgen</id>
+    <description><![CDATA[This plugin generates JUnit tests from right click 'Generate...' menu while focused
+    on a java class. The unit test output code can be customized using a provided velocity template to format
+    the code based on the origin class.
+    <p>If a unit test is created where one already exists, the user is prompted for overwrite or merge operation. The merge operation
+    allows the user to selectively create the target file content.</p>
+    <p>A future revision will allow the user to generate their own test case macros.</p>]]>
+    </description>
+    <version>1.0-SNAPSHOT</version>
+    <vendor email="xin.zhang@zatech.com" url="">zhang xin</vendor>
+    <idea-version since-build="8000"/>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.lang</depends>
+    <depends>com.intellij.modules.java</depends>
+
+    <application-components>
+        <component>
+            <implementation-class>org.intellij.plugins.junitgen.JUnitGenerator</implementation-class>
+        </component>
+    </application-components>
+
+    <project-components>
+        <component>
+            <implementation-class>org.intellij.plugins.junitgen.JUnitGenerator</implementation-class>
+        </component>
+    </project-components>
+
+    <actions>
+        <group id="com.zaclown.intellij.plugins.junitgen.action.JUnitGeneratorMenu"
+               class="org.intellij.plugins.junitgen.action.JUnitGeneratorGroup"
+               popup="true"
+               text="JUnit Test"
+               icon="/logo.png">
+            <add-to-group group-id="GenerateGroup" anchor="after" relative-to-action="JavaGenerateGroup2"/>
+        </group>
+    </actions>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- configurable extension -->
+        <applicationConfigurable instance="org.intellij.plugins.junitgen.ui.JUnitGeneratorConfigurable$App"/>
+        <projectConfigurable instance="org.intellij.plugins.junitgen.ui.JUnitGeneratorConfigurable$Prj"/>
+        <!-- service for the settings -->
+        <applicationService serviceInterface="org.intellij.plugins.junitgen.JUnitGeneratorSettings"
+                            serviceImplementation="org.intellij.plugins.junitgen.JUnitGeneratorSettings$App"/>
+        <projectService serviceInterface="org.intellij.plugins.junitgen.JUnitGeneratorSettings"
+                        serviceImplementation="org.intellij.plugins.junitgen.JUnitGeneratorSettings$Prj"/>
+    </extensions>
+
+    <change-notes><![CDATA[
+            This revision contains the following updates:</br>
+            <ul>
+            <li>Upgraded to newest version of the open api
+            <li>Added project and application settings areas
+            <li>Fixed an issue when overwriting an existing test case
+            <li>The configuration now uses a form based swing dialog
+            <li>Multiple templates can be selected from the menu
+            <li>Various other improvements and code enhancements
+            </ul>
+            ]]>
+    </change-notes>
+</idea-plugin>

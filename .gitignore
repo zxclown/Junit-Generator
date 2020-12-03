@@ -1,0 +1,19 @@
+# IDE
+.idea/
+.settings/
+.project
+.gradle
+.classpath
+.factorypath
+.vscode
+*.iml
+dmds_conection.txt
+dep.txt
+
+# Compiled class file
+*.class
+target/
+build/
+
+# Log file
+*.log
