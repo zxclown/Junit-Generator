@@ -13,7 +13,7 @@ import java.util.Date;
  */
 public class DateTool {
 
-    public static final String DEFAULT_FORMAT = "MMM d, yyyy";
+    public static final String DEFAULT_FORMAT = "yyyy-MM-dd HH:mm";
 
     /**
      * The current calendar instance

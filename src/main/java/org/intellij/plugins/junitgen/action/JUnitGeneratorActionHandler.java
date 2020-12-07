@@ -98,7 +98,7 @@ public class JUnitGeneratorActionHandler extends EditorWriteActionHandler {
 
                         List<PsiMethod> methodList = new ArrayList<PsiMethod>();
                         List<PsiMethod> pMethodList = new ArrayList<PsiMethod>();
-                        List<String> fieldList = new ArrayList<String>();
+                        List<PsiField> fieldList = new ArrayList<>();
 
                         List<MethodComposite> methodCompositeList = new ArrayList<MethodComposite>();
                         List<MethodComposite> privateMethodCompositeList = new ArrayList<MethodComposite>();
@@ -352,9 +352,9 @@ public class JUnitGeneratorActionHandler extends EditorWriteActionHandler {
      * @param fields    an array of fields
      * @param fieldList list to be populated
      */
-    private void buildFieldList(PsiField[] fields, List<String> fieldList) {
+    private void buildFieldList(PsiField[] fields, List<PsiField> fieldList) {
         for (PsiField field : fields) {
-            fieldList.add(field.getName());
+            fieldList.add(field);
         }
     }
 

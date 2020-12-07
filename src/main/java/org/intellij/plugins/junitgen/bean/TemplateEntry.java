@@ -1,5 +1,7 @@
 package org.intellij.plugins.junitgen.bean;
 
+import com.intellij.psi.PsiField;
+
 import java.util.List;
 
 /**
@@ -12,7 +14,7 @@ public class TemplateEntry {
 
     private final List<MethodComposite> methodList;
     private final List<MethodComposite> privateMethodList;
-    private final List<String> fieldList;
+    private final List<PsiField> fieldList;
 
     private String className;
     private String packageName;
@@ -21,7 +23,7 @@ public class TemplateEntry {
                          String packageName,
                          List<MethodComposite> methodList,
                          List<MethodComposite> privateMethodList,
-                         List<String> fieldList) {
+                         List<PsiField> fieldList) {
         this.className = className;
         this.packageName = packageName;
         this.methodList = methodList;
@@ -37,7 +39,7 @@ public class TemplateEntry {
         return packageName;
     }
 
-    public List<String> getFieldList() {
+    public List<PsiField> getFieldList() {
         return fieldList;
     }
 
