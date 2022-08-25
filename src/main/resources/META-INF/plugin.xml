@@ -9,7 +9,7 @@
     <p>A future revision will allow the user to generate their own test case macros.</p>]]>
     </description>
     <version>1.0-SNAPSHOT</version>
-    <vendor email="xin.zhang@zatech.com" url="">zhang xin</vendor>
+    <vendor email="304776805@qq.com" url="">zhang xin</vendor>
     <idea-version since-build="8000"/>
 
     <depends>com.intellij.modules.platform</depends>
@@ -29,7 +29,7 @@
     </project-components>
 
     <actions>
-        <group id="com.zaclown.intellij.plugins.junitgen.action.JUnitGeneratorMenu"
+        <group id="com.zxclown.intellij.plugins.junitgen.action.JUnitGeneratorMenu"
                class="org.intellij.plugins.junitgen.action.JUnitGeneratorGroup"
                popup="true"
                text="JUnit Test"
